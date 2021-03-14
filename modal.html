@@ -1,0 +1,137 @@
+<!--
+-------------------------------------------------------------
+ 
+File: modal.html
+Project: Amoplex Technologies
+File Created: Tuesday, 19th January 2021 8:07:10 am
+Author: Lucas Schüller (lucas@amoplex.de)
+-----
+Last Modified: Tuesday, 19th January 2021 8:07:11 am
+Modified By: Lucas Schüller (lucas@amoplex.de)
+-----
+Copyright - 2021 Amoplex Technologies
+ 
+-------------------------------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickNews | Lucas Schüller</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/font/fontawesome.css">
+    <link rel="stylesheet" href="assets/font/montserrat.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <section class="modal">
+        <div class="nav">
+            <h1>QuickNews</h1>
+            <i class="fa fa-newspaper"></i>
+        </div>
+        <ul class="body">
+            <li class="caseStudy" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div>
+                        <h2>Case Study</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fa fa-poll"></i>
+                </div>
+                <p hidden>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+            <li class="howTo" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div class="title">
+                        <h2>How To</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fa fa-hammer"></i>
+                </div>
+                <p hidden>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+            <li class="demonstration" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div class="title">
+                        <h2>Demonstration</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fa fa-bullhorn"></i>
+                </div>
+                <p hidden>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+            <li class="interview" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div class="title">
+                        <h2>Interview</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <p hidden>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+            <li class="press" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div class="title">
+                        <h2>Press Release</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fa fa-edit"></i>
+                </div>
+                <p hidden>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+            <li class="blog" style="opacity: 0;">
+                <div class="img"></div>
+                <div class="text">
+                    <div class="title">
+                        <h2>Blog</h2>
+                        <h3>Bethany Chambers</h3>
+                    </div>
+                    <i class="fa fa-blog"></i>
+                </div>
+                <p hidden>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam </p>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button type="button" class="primary" onclick="refreshPage()">Refresh</button>
+            <button type="button">Close</button>
+        </div>
+
+        <div id="overlay">
+            <i class="fa fa-times close"></i>
+            <div class="img"></div>
+            <div class="text">
+                <div class="header">
+                    <h1></h1>
+                    <i class="fa"></i>
+                </div>
+                <p></p>
+                <button type="button">Full Article</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

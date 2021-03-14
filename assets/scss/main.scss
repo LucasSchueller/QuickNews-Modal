@@ -1,0 +1,296 @@
+/*
+ * -------------------------------------------------------------
+ *  
+ * File: main.scss
+ * Project: Amoplex Technologies
+ * File Created: Tuesday, 19th January 2021 8:08:28 am
+ * Author: Lucas Schüller (lucas@amoplex.de)
+ * -----
+ * Last Modified: Tuesday, 19th January 2021 8:08:28 am
+ * Modified By: Lucas Schüller (lucas@amoplex.de)
+ * -----
+ * Copyright - 2021 Amoplex Technologies
+ *  
+ * -------------------------------------------------------------
+ */
+
+@import "imports/reset";
+@import "imports/vars";
+:root {
+    --col-1: #{$light};
+    --col-2: #{$black};
+}
+
+* {
+    transition: all .2s ease-in-out;
+}
+
+*::selection {
+    background: var(--col-2);
+    color: var(--col-1);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+    background: var(--col-2);
+    display: grid;
+    place-content: center;
+    &.active::before {
+        clip-path: circle(80% at 40% 0);
+    }
+    &::before {
+        background: var(--col-1);
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        clip-path: circle(0% at 0 0);
+        transition: clip-path .5s ease-in-out;
+    }
+}
+
+.modal {
+    max-width: 550px;
+    width: 95vw;
+    background: var(--col-1);
+    border-radius: 12px;
+    box-shadow: $shadow;
+    padding: 50px;
+    position: relative;
+    transition: clip-path 2s ease-in-out;
+    overflow: visible;
+    box-sizing: border-box;
+    .nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-size: 35px;
+            color: var(--col-2);
+            font-weight: 600;
+        }
+        i {
+            color: var(--col-2);
+            font-size: 35px;
+        }
+    }
+    .body {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 80%;
+        min-height: 500px;
+        padding: 0;
+        * {
+            cursor: pointer;
+        }
+        li {
+            background: var(--col-1);
+            box-shadow: $shadow;
+            border-radius: 12px;
+            min-width: 45%;
+            max-height: 25%;
+            overflow: hidden;
+            position: relative;
+            .img {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 60%;
+                width: 100%;
+                transition: transform .4s ease-in-out;
+            }
+            .text {
+                width: 100%;
+                height: 40%;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: var(--col-2);
+                h2 {
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                h3 {
+                    font-size: 12px;
+                }
+                i {
+                    font-size: 25px;
+                }
+            }
+            &:hover {
+                transform: scale(1.1);
+                .text div {
+                    transform: translateX(5%);
+                }
+                i {
+                    color: lighten($black, 15%);
+                }
+            }
+        }
+    }
+    .caseStudy .img {
+        background-image: url("../img/types/caseStudy.jpg");
+    }
+    .howTo .img {
+        background-image: url("../img/types/howTo.jpg");
+    }
+    .demonstration .img {
+        background-image: url("../img/types/demonstration.jpg");
+    }
+    .interview .img {
+        background-image: url("../img/types/interview.jpg");
+    }
+    .press .img {
+        background-image: url("../img/types/press.jpg");
+    }
+    .blog .img {
+        background-image: url("../img/types/blog.jpg");
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            width: 45%;
+            height: 45px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: none;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--col-2);
+            background: var(--col-1);
+            box-shadow: $shadow;
+            transition: transform .3s ease-in-out;
+            &.primary {
+                color: var(--col-1);
+                background: var(--col-2);
+                &:hover {
+                    background: lighten($black, 5%);
+                }
+            }
+            &:hover {
+                background: darken($light, 10%);
+                transform: scale(1.03);
+            }
+        }
+    }
+    &.active #overlay {
+        clip-path: circle(150% at 100% 100%);
+    }
+    #overlay {
+        background: var(--col-2);
+        clip-path: circle(0% at 100% 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: clip-path .5s ease-in-out;
+        border-radius: 12px;
+        overflow: hidden;
+        i.close {
+            font-size: 45px;
+            color: var(--col-1);
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            cursor: pointer;
+        }
+        .img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 40%;
+            width: 100%;
+            max-height: 300px;
+        }
+        .text {
+            padding: 50px;
+            overflow: scroll;
+            overflow-x: hidden;
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h1 {
+                    color: var(--col-1);
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+                i {
+                    color: var(--col-1);
+                    font-size: 40px;
+                    &:hover {
+                        color: darken(var(--col-1), 5%);
+                    }
+                }
+            }
+            p {
+                margin-top: 30px;
+                color: var(--col-1);
+                line-height: 1.4em;
+                font-size: 18px;
+                font-weight: 300;
+                text-align: justify;
+            }
+            button {
+                margin-top: 20px;
+                width: 100%;
+                height: 45px;
+                border-radius: 12px;
+                cursor: pointer;
+                box-shadow: none;
+                border: none;
+                font-weight: 600;
+                font-size: 15px;
+                color: var(--col-2);
+                background: var(--col-1);
+                box-shadow: $shadow;
+                transition: all .3s ease-in-out;
+                &:hover {
+                    background: darken($light, 15%);
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal {
+        .body {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            li {
+                margin: 20px 0;
+                min-height: 150px;
+                min-width: 70%;
+            }
+            &::after {
+                position: relative;
+                content: "";
+                height: 100px;
+            }
+        }
+        #overlay .text {
+            padding: 30px;
+        }
+    }
+}
